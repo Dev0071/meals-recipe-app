@@ -13,25 +13,25 @@ function Meals() {
 
   return (
     <section className="bg-gray-100  ">
-      {meals.map((meal) => {
-        const { strmeal: name, idMeal: id, strMealThumb: image } = meal;
-        return (
-          <article
-            key={id}
-            className="flex  gap-[1.5rem] px-[1.5rem] flex-wrap py-6 md:px-[5rem] md:gap-[2rem] md:py-8"
-          >
-            <div className="flex flex-col h-[19rem]   rounded-lg overflow-hidden shadow-lg w-[22rem] cursor-pointer hover:skew-x-2 transition duration-700 ease-in-out">
-              <div className="object-cover grow-0 ">
-                <img className=" " src={image} alt="food" />
+      <div className="flex  gap-[1.5rem] px-[1.5rem] flex-wrap py-6 md:px-[5rem] md:gap-[2rem] md:py-8">
+        {meals.map((meal) => {
+          const { strmeal: name, idMeal: id, strMealThumb: image } = meal;
+          return (
+            <article
+              key={id}
+              className="flex flex-col h-[19rem]   rounded-lg overflow-hidden shadow-lg w-[22rem] cursor-pointer hover:skew-x-2 transition duration-700 ease-in-out"
+            >
+              <div>
+                <img className src={image} alt="food" />
               </div>
-              <div className="flex justify-between py-6 px-6 bg-white">
+              <div className=" bg-white">
                 <p>{name}</p>
                 icon
               </div>
-            </div>
-          </article>
-        );
-      })}
+            </article>
+          );
+        })}
+      </div>
     </section>
   );
 }
