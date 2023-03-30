@@ -2,7 +2,7 @@ import React from 'react';
 
 const Search = () => {
   return (
-    <div className="px-[4rem] py-[2rem] flex gap-[2rem]">
+    <section className="px-[4rem] py-[2rem] flex gap-[2rem]">
       <input
         type="text"
         placeholder="type favourite meal"
@@ -20,7 +20,7 @@ const Search = () => {
       >
         Surprise me
       </button>
-    </div>
+    </section>
   );
 };
 

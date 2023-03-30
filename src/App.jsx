@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <Search />
-      {/* <Favourites /> */}
+      <Favourites />
       <Meals />
       {/* <Modal /> */}
     </>
