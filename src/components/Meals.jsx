@@ -8,23 +8,27 @@ function Meals() {
   const { isLoading, meals } = useGlobalContext();
   const defaultImg =
     '"https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWVhbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"';
-  console.log(meals);
+  // console.log(meals);
   if (isLoading) return <Loader />;
-
+  if (meals.length < 1) {
+    return (
+      <h2 className="mt-6 font-bold">No meals matched your search term</h2>
+    );
+  }
   return (
     <section className="bg-gray-100  ">
       <div className="flex  gap-[1.5rem] px-[1.5rem] flex-wrap py-6 md:px-[5rem] md:gap-[2rem] md:py-8">
         {meals.map((meal) => {
-          const { strmeal: name, idMeal: id, strMealThumb: image } = meal;
+          const { strMeal: name, idMeal: id, strMealThumb: image } = meal;
           return (
             <article
               key={id}
-              className="flex flex-col h-[19rem]   rounded-lg overflow-hidden shadow-lg w-[22rem] cursor-pointer hover:skew-x-2 transition duration-700 ease-in-out"
+              className="flex flex-col h-[19rem]   rounded-lg overflow-hidden shadow-lg w-[21rem] cursor-pointer hover:skew-x-2 transition duration-700 ease-in-out"
             >
-              <div>
-                <img className src={image} alt="food" />
+              <div className=" object-cover">
+                <img className="h-[16rem] w-[100%]" src={image} alt="food" />
               </div>
-              <div className=" bg-white">
+              <div className=" bg-white ">
                 <p>{name}</p>
                 icon
               </div>
