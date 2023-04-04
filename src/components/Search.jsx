@@ -12,6 +12,7 @@ const Search = () => {
 
   const handleRandomMeal = () => {
     setSearchTerm('');
+    // console.log('randomMeal');
     setText('');
     fetchRandomMeal();
   };
@@ -37,7 +38,7 @@ const Search = () => {
         <button
           type="submit"
           className="bg-blue-200 text-sm  px-2 py-1 rounded-sm font-medium duration-700 hover:bg-blue-400"
-          onClick={() => handleRandomMeal}
+          onClick={() => handleRandomMeal()}
         >
           Surprise me
         </button>
